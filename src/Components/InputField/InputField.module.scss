@@ -1,0 +1,34 @@
+@import '../../style//mixins';
+
+.inputContainer {
+  position: relative;
+  width: 220px;
+
+  &.focused {
+    .inputField {
+      border: 1px solid #4091F0;
+    }
+
+    .inputLabel {
+      top: -1px;
+      left: 8px;
+      font-size: 10px;
+      color: #4091F0;
+    }
+  }
+}
+
+.inputField {
+  @include inputFieldStyles(#4091F0);
+}
+
+.inputLabel {
+  @include inputLabelStyles(#FFFFFF, 16px, #333333);
+}
+
+.inputLabel.active {
+  top: -1px;
+  left: 8px;
+  font-size: 10px;
+  color: #4091F0;
+}

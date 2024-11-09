@@ -1,0 +1,22 @@
+@import '../../style//mixins';  
+
+.headerContainer {
+      position: relative; 
+  @include headerContainerStyles(351px, 40px);
+
+  img {
+      width: 18px;
+      height: 25px;
+      position: absolute;
+      top: 4px;
+    }
+}
+
+@media (orientation: portrait) {
+    @media (max-width: 768px) { 
+      .headerContainer {
+        width: 313px;  
+      }
+    }
+  }
+

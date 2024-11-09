@@ -1,0 +1,93 @@
+
+@mixin imageStyles($width, $height, $borderColor, $maxWidth: null, $maxHeight: null) {
+      width: $width;
+      height: $height;
+      border: 1px solid $borderColor;
+      border-radius: 10px;
+      
+      @if $maxWidth {
+        max-width: $maxWidth;
+      }
+    
+      @if $maxHeight {
+        max-height: $maxHeight;
+      }
+    
+      object-fit: cover;  
+    }
+    
+    @mixin headerContainerStyles($width, $height) {
+      width: $width;
+      height: $height;
+      .title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #181818;
+        font-family: 'Roboto';
+        margin: 0;
+        margin-left: 25px;
+      }
+    
+      .description {
+        font-size: 12px;
+        font-family: 'Roboto';
+        font-weight: 400;
+        color: #747474;
+        margin: 0;
+        margin-left: 25px;
+      }
+    }
+
+@mixin inputFieldStyles($focusColor) {
+      width: 98%;
+      padding: 10px 10px;
+      border: 1px solid gray;
+      border-radius: 4px;
+      font-size: 16px;
+      outline: none;
+      transition: border 0.3s ease;
+    
+      &:focus {
+        border: 1px solid $focusColor;
+      }
+    
+      &:focus + .inputLabel,
+      &:not(:placeholder-shown) + .inputLabel {
+        top: -1px;
+        left: 8px;
+        font-size: 10px;
+        color: $focusColor;
+      }
+    }
+    
+    @mixin inputLabelStyles($bgColor, $fontSize, $color) {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      background-color: $bgColor;
+      padding: 0 4px;
+      font-size: $fontSize;
+      color: $color;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    
+    @mixin buttonStyles($backgroundColor, $textColor) {
+      width: 237px;
+      height: 44px;
+      gap: 8px;
+      opacity: 1;
+      border-radius: 4px;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+      background-color: $backgroundColor;
+      border: none;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16.41px;
+      text-align: center;
+      color: $textColor;
+      font-family: 'Roboto';
+    }
+    
